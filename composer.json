@@ -1,0 +1,15 @@
+{
+    "name": "rousl/mvc-framework",
+    "authors": [
+        {
+            "name": "RouslanBoyko",
+            "email": "rouslanboyko.webdeveloper@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "app\\": "./"
+        }
+    },
+    "require": {}
+}
