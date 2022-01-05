@@ -39,8 +39,7 @@ class Router
         if (is_string($callback)) {
             return $this->renderView($callback);
         }
-        if(is_array($callback))
-        {
+        if (is_array($callback)) {
             Application::$app->controller = new $callback[0]();
             $callback[0] = Application::$app->controller;
         }
@@ -53,13 +52,13 @@ class Router
     {
         $layoutContent = $this->layoutContent();
         $viewContent = $this->renderOnlyView($view, $params);
-        return str_replace('{{content}}',$viewContent,$layoutContent);
+        return str_replace('{{content}}', $viewContent, $layoutContent);
     }
 
     public function renderContent($viewContent)
     {
         $layoutContent = $this->layoutContent();
-        return str_replace('{{content}}',$viewContent,$layoutContent);
+        return str_replace('{{content}}', $viewContent, $layoutContent);
     }
 
     protected function layoutContent()
@@ -73,7 +72,7 @@ class Router
     protected function renderOnlyView($view, $params)
     {
 
-        foreach ($params as $key =>$value){
+        foreach ($params as $key => $value) {
             $$key = $value;
         }
         ob_start();
